@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TIs-RU-Zff">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Courses-->
+        <scene sceneID="t7G-D6-4Jy">
+            <objects>
+                <tableViewController id="nTD-ce-IPa" customClass="CoursesViewController" customModule="Nerdfeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rCm-zp-TOj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="PXU-oY-krb" style="IBUITableViewCellStyleDefault" id="R0T-zK-zpp">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R0T-zK-zpp" id="PhM-e1-gmS">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PXU-oY-krb">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Y7g-tT-azw" kind="show" identifier="showDetail" id="UUF-DJ-O63"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nTD-ce-IPa" id="bXv-9K-Jbj"/>
+                            <outlet property="delegate" destination="nTD-ce-IPa" id="iEu-Bi-pIk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Courses" id="48m-uE-6LM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qH-rM-9sW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="820" y="552"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="SY4-au-8xQ">
+            <objects>
+                <viewController id="gYp-AA-HFW" customClass="WebViewController" customModule="Nerdfeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qac-cV-bZz"/>
+                        <viewControllerLayoutGuide type="bottom" id="9EU-BQ-a3X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UgM-R4-Ga9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Y7-4B-pzs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3EN-Zk-klc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="820" y="1388"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gPH-JE-wrG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="czF-n8-VQp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O6d-t0-h90">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nTD-ce-IPa" kind="relationship" relationship="rootViewController" id="HLR-53-D6T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RQZ-DO-7Kr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8" y="552"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="oFW-W5-U9S">
+            <objects>
+                <splitViewController id="TIs-RU-Zff" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="Y7g-tT-azw" kind="relationship" relationship="detailViewController" id="Ffr-Pq-oac"/>
+                        <segue destination="czF-n8-VQp" kind="relationship" relationship="masterViewController" id="wOb-ok-W06"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s0X-uR-Lcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-872" y="820"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DQB-my-dfr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y7g-tT-azw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DOh-gp-FoZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gYp-AA-HFW" kind="relationship" relationship="rootViewController" id="Ebd-v4-uuq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Emi-wx-Hp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="165" y="1008"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UUF-DJ-O63"/>
+    </inferredMetricsTieBreakers>
+</document>
